@@ -6,14 +6,14 @@ public class algorytmDawidMariankowski {
     public static void main(String[] args) throws FileNotFoundException {
         File data = new File("mojaTablica.txt");
         Scanner load = new Scanner(data);
-        int size = load.nextInt();
-        int dataBase[][] = new int[size][size];
+        float size = load.nextFloat();
+        float dataBase[][] = new float[(int) size][(int) size];
 
         while (load.hasNext()) {
             for (int i = 0; i < size; i++) {
                 System.out.println();
                 for (int j = 0; j < size; j++) {
-                    dataBase[i][j] = load.nextInt();
+                    dataBase[i][j] = load.nextFloat();
                     System.out.print(" " + dataBase[i][j]);
                 }
 
@@ -22,7 +22,7 @@ public class algorytmDawidMariankowski {
         }
 
         //algorytm
-        int visited[] = new int[size + 1];
+        int visited[] = new int[(int) (size + 1)];
         int lower;
         int nextLine = 0;
 
@@ -41,7 +41,7 @@ public class algorytmDawidMariankowski {
                 }
                 if (!isVisited && lower > dataBase[nextLine][j]) {
 
-                    lower = dataBase[nextLine][j];
+                    lower = (int) dataBase[nextLine][j];
                     visited[i + 1] = j;
                 } else {
 
